@@ -32,6 +32,10 @@ form button {
   color: white;
 }
 
+form h5 {
+  color: red;
+}
+
 .delete {
   background-color: red;
   color: white;

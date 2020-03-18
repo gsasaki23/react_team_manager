@@ -36,13 +36,13 @@ export default () => {
             <div>
                 <label>Player Name:</label>
                 <input type="text" onChange={onNameChangeHandler} autoFocus/>
-                {nameError ? <h5>* Name must be at least 2 characters</h5> : <h5></h5>}
+                {nameError ? <h5>* Name must be at least 2 characters</h5> : <h5> </h5>}
             </div>
 
             <div>
                 <label>Preferred Position:</label>
                 <input type="text" onChange={onPositionChangeHandler}/>
-                {positionError ? <h5>Position must be at least 2 characters</h5> : <h5></h5>}
+                {positionError ? <h5>* Position must be at least 2 characters</h5> : <h5> </h5>}
             </div>
 
             {/* hide until valid */}

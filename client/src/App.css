@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+  margin-top: 5px;
+  border: 3px solid black;
+}
+
+table thead tr th {
+  padding: 0px 50px;
+}
+
+form {
+  width: 50%;
+  margin: auto;
+  margin-top: 5px;
+  border: 3px solid black;
+}
+
+form div {
+  margin: 10px 0px;
+}
+
+form button {
+  border: 2px solid black;
+  margin: 10px 10px;
+  padding: 0px 30px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+  border: 2px solid black;
+  margin: 0px 10px;
+  padding: 0px 30px;
+  border-radius: 5px;
+}
+
+.playing {
+  background-color: green;
+  color: white;
+  border: 2px solid black;
+  margin: 0px 10px;
+  padding: 0px 30px;
+  border-radius: 5px;
+}
+
+.notplaying {
+  background-color: red;
+  color: white;
+  border: 2px solid black;
+  margin: 0px 10px;
+  padding: 0px 30px;
+  border-radius: 5px;
+}
+
+.undecided {
+  background-color: yellow;
+  border: 2px solid black;
+  margin: 0px 10px;
+  padding: 0px 30px;
+  border-radius: 5px;
+}
+
+.notChosen {
+  border: 2px solid black;
+  margin: 0px 10px;
+  padding: 0px 30px;
+  border-radius: 5px;
+}

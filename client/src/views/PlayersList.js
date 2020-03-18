@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from '@reach/router';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default () => {
     const [players, setPlayers] = useState([]);
@@ -15,7 +17,18 @@ export default () => {
             })
             .catch(console.log);
     }, [])
-
+    
+    // Confirms deleting player, calling deletePlayer if 'Yes' clicked
+    const confirmPopup = (event,player) => {
+        confirmAlert({
+            title: 'Confirm Delete',
+            message: `Are you sure you want to delete ${player.name}?`,
+            buttons: [
+                {label: 'Yes',onClick: () => deletePlayer(player._id)},
+                {label: 'No'}
+            ]
+        });
+    }
     // Given ID, delete and update "players" state
     const deletePlayer = (playerID) => {   
         axios.delete('http://localhost:8000/api/players/delete/' + playerID)
@@ -60,7 +73,7 @@ export default () => {
                             <tr key={idx}>
                                 <td>{player.name}</td>
                                 <td>{player.position}</td>
-                                <td><button className="delete" onClick={event => deletePlayer(player._id)}>DELETE</button></td>
+                                <td><button className="delete" onClick={event => confirmPopup(event,player)}>DELETE</button></td>
                             </tr>
                         )
                     })}
@@ -69,7 +82,6 @@ export default () => {
             // else
             : <h2>Loading...</h2>
             }
-            <h1>add delete confirmation pop-ups</h1>
         </>
     )
 }
